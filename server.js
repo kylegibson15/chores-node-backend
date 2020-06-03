@@ -8,8 +8,10 @@ const ParentRouter = require('./routes/parent.router')
 const ChildRouter = require('./routes/child.router')
 const ChoreRouter = require('./routes/chore.router')
 
-const app = express()
-const apiPort = 3001
+const app = express();
+
+require('dotenv').config();
+const apiPort = process.env.PORT || 3001;
 
 app.use(cors())
 app.use(bodyParser.json())
